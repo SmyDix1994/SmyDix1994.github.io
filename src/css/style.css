@@ -1,3 +1,99 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #e0e0e0;
+    z-index: 2;
+    animation: move forwards;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    
+  }
+
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #344051;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    animation: preloader-bounce 1.7s infinite ease-in-out;
+    box-shadow: 0px 0px 10px rgb(146, 146, 146);
+  }
+
+  .preloader__item2 {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #ffffff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+    box-shadow: 0px 0px 10px rgb(146, 146, 146);
+  }
+
+  .preloader__item3 {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #d17d00;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    animation: preloader-bounce 2.3s infinite ease-in-out;
+    box-shadow: 0px 0px 10px rgb(146, 146, 146);
+  }
+  
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(2, 2);
+    }
+  }
+
+  @keyframes move{
+    0% {
+        opacity: 1;
+      }
+    70% {
+        opacity: 0;
+        z-index: -1;
+       }
+    100% {
+        opacity: 0;
+        z-index: -1;
+      }
+  }
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -6,7 +102,8 @@ nav {
     width: 100%;
     height: 60px;
     background: #344051; 
-    box-shadow: 0px 0px 30px #9f9f9f;
+    position: fixed;
+    z-index: 1;
 }
 
 .logo {
@@ -15,6 +112,8 @@ nav {
     padding-left: 20%;
     padding-top: 16px;
     float: left;
+    animation: camming 2s ease;
+    animation-delay: 2.5s;
 }
 
 .menu {
@@ -28,8 +127,50 @@ nav {
     line-height: 60px;
     margin-right: 40px;
     font-size: 16px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    color: white;
+    animation: main_li 2.4s ease forwards;
+    
+    opacity: 0;
 }
+
+.menu li a {
+    transition: all 2.s;
+    color: white;
+    transform: scale(1);
+    display: inline-block;
+}
+
+.menu li a:visited {
+    color: white;
+    
+}
+
+.menu li a:hover {
+    color: #e98400; 
+}
+
+.menu li a:active {
+    transform: scale(1.09);
+}
+
+.menu li:nth-child(2) {
+    animation-delay: 1.6s;
+}
+.menu li:nth-child(3) {
+    animation-delay: 2s;
+}
+.menu li:nth-child(4) {
+    animation-delay: 2.4s;
+}
+.menu li:nth-child(5) {
+    animation-delay: 2.8s;
+}
+.menu li:nth-child(6) {
+    animation-delay: 3.2s;
+}
+
+
 
 .main {
     width: 100%;
@@ -43,6 +184,9 @@ nav {
     margin: 432px 0px 0px 404px;
     color: #2c384a;
     text-align: center;
+    opacity: 0;
+    animation: title_move 2s ease forwards;
+    animation-delay: 3.3s;
 }
 
 .title__container h1 {
@@ -57,7 +201,7 @@ nav {
     color: #79818d;
 }
 
-.my_submit {
+.title__container input {
     border: 2px solid #6d7682;
     border-radius: 5px;
     padding: 10px;
@@ -69,6 +213,58 @@ nav {
     font-size: 13px;
     font-weight: 600;
     background: none;
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.title__container input:hover {
+    background-color: #344051;
+    color: white;
+    transform: scale(1.14);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
+}
+
+.title__container input:active {
+    background-color: #344051;
+    color: #ffdbac;
+    transform: scale(1.00);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
+}
+
+@keyframes camming {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes main_li {
+    from {
+        opacity: 0;
+        margin-top: -80px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes title_move {
+    from {
+        opacity: 0;
+        margin-left: -500px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 404px;
+    }
 }
 
 .about_me {
@@ -96,7 +292,6 @@ nav {
     margin-top: 320px;
     font-weight: 400;
     line-height: 17px;
-    
 }
 
 .p_2 {
@@ -108,7 +303,6 @@ nav {
     margin-top: 44px;
     font-weight: 400;
     line-height: 17px;
-    
 }
 
 .about_me input {
@@ -121,6 +315,23 @@ nav {
     font-size: 13px;
     font-weight: 600;
     background: url(../img/icon.png) 13px no-repeat;
+    transition: all 0.2s;
+}
+
+.about_me input:hover {
+    background-color: #344051;
+    color: white;
+    transform: scale(1.14);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
+}
+
+.about_me input:active {
+    background-color: #344051;
+    color: #ffdbac;
+    transform: scale(1.00);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
 }
 
 .skill {
@@ -255,19 +466,21 @@ nav {
 .keis2 h3 {
     font-size: 24px;
     font-weight: 600;
-    
+    color: #263244;
 }
 
 .keis2 h6 {
     font-size: 13px;
     margin-top: 17px;
+    color: #263244;
 }
 
 .keis2 p {
     margin-top: 17px;
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 17px
+    margin-bottom: 17px;
+    color: #263244;
 }
 
 .keis2 a {
@@ -279,6 +492,23 @@ nav {
     padding: 8px 20px 8px 20px;
     border-radius: 5px; 
     color: white;
+    background-color: #63b5ae;
+    transition: all 0.2s;
+}
+
+.keis2 input:hover {
+    background-color: darkorange;
+    color: white;
+    transform: scale(1.14);
+    font-weight: 700;
+    box-shadow: 0px 0px 10px  #000000;
+}
+
+.keis2 input:active {
+    background-color: #63b5ae;
+    color: white;
+    transform: scale(1);
+    box-shadow: 0px 0px 10px  #000000;
 }
 
 .keis4 h3 {
@@ -292,6 +522,7 @@ nav {
     margin-left: 85px;
     line-height: 1.3;
     font-size: 15px;
+    color: #263244;
 }
 
 .price  {
@@ -308,6 +539,7 @@ nav {
     text-transform: uppercase;
     letter-spacing: -0.6px;
 }
+
 
 .price_h_1 {
     margin-left: 495px;
@@ -363,9 +595,11 @@ nav {
     font-size: 15px;
 }
 
+
+
 .price2 {
     margin-top: 25px;
-    
+    color: #263244;
     margin-left: 495px;
     height: 210px;
 }
@@ -414,6 +648,7 @@ nav {
     width: 1200px;
     margin-top: 150px;
     margin-left: 65px;
+    color: #263244;
 }
 
 .static_li12 {
@@ -648,6 +883,20 @@ nav {
     font-weight: 600;
 }
 
+.input_submit:hover {
+    color: darkorange;
+    transform: scale(1.14);
+    box-shadow: 0px 0px 10px  #000000;
+    transition: 0.4s;
+}
+
+.input_submit:active {
+    color: rgb(255, 168, 62);
+    transform: scale(1);
+    box-shadow: 0px 0px 10px  #000000;
+    transition: 0.4s;
+}
+
 .geo {
     background: url(../img/karta.png) no-repeat;
     height: 351px;
@@ -662,6 +911,44 @@ nav {
     margin-top: 150px;
     margin-left: 890px;
     border-radius: 1px;
+    color: #344051;
+}
+
+.hidden {
+    display: none;
+}
+
+.geo input:hover {
+    background-color: #344051;
+    color: darkorange;
+    transform: scale(1.14);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
+    transition: 0.4s;
+}
+
+.geo input:active {
+    background-color: #344051;
+    color: rgb(255, 168, 62);
+    transform: scale(1);
+    box-shadow: 0px 0px 10px  #000000;
+    border: none;
+    transition: 0.4s;
+}
+
+.geo input:hover + .hidden {
+    display: block;
+    text-align: center;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 41.5%;
+    position: absolute;
+    padding: 17px 15px;
+    border: 2px solid #344051;
+    margin-top: 10px;
+    color: #344051;
 }
 
 footer {
