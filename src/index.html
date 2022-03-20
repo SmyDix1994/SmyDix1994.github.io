@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +12,14 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="slick/slick.css"/>
+    <link rel="stylesheet" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
 </head>
+
+
+<body>
 
     <div class="preloader">
         <div class="preloader__row">
@@ -24,10 +30,7 @@
         <div class="preloader__item3"></div>
         <div class="preloader__item3"></div>
         </div>
-    </div>
-<body>
-
-    
+    </div>  
 
 <header>
     <nav>
@@ -40,12 +43,12 @@
                 d-none d-lg-block">
                     <div class="menu">
                     <ul>
-                        <li><a href="#">Обо мне</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Кейсы</a></li>
-                        <li><a href="#">Прайс</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a class="active" href="#about_me">Обо мне</a></li>
+                        <li><a class="active" href="#skill">Услуги</a></li>
+                        <li><a class="active" href="#keis">Кейсы</a></li>
+                        <li><a class="active" href="#price">Прайс</a></li>
+                        <li><a class="active" href="#otzyvy">Отзывы</a></li>
+                        <li><a class="active" href="#contact">Контакты</a></li>
                     </ul>
                  </div>
                 </div>
@@ -66,9 +69,7 @@
                   </div>
                 </div>
             </div>
-        </div>
-        
-        
+        </div>   
     </nav>
 </header>
 
@@ -90,7 +91,7 @@
 </section>
 
  
-<section class="about_me">
+<section class="about_me" id="about_me">
     <div class="about_me1">
         <h2>Обо мне</h2>
         <img src="img/chert.png" alt="chert">
@@ -104,7 +105,7 @@
 </section>
 
 
-<section class="skill">
+<section class="skill" id="skill">
     <div class="skill_head">
         <h2>ЧТО Я УМЕЮ</h2>
         <br>
@@ -142,7 +143,7 @@
     </div>
 </section>
 
-<section class="keis">
+<section class="keis" id="keis">
     <div class="keis_head">
         <h2>КЕЙСЫ</h2>
         <img src="img/chert.png" alt="chert">
@@ -150,9 +151,56 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam. Numquam rem nostrum nisi iusto soluta cupiditate repellat.
         </p>
     </div>
-    <div class="keis_img">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- <img src="img/fotka.png" class="d-block mx-auto" alt="..."> -->
+            <div class="carousel-item1">
+                <div id="myModal" class="modal"> 
+                    <!-- <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div> -->
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <img src="img/fotka.png" class="d-block mx-auto" alt="..."> -->
+            <div class="carousel-item2">
+                <div id="myModal" class="modal">
+                    <!-- <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div> -->
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <img src="img/fotka.png" class="d-block mx-auto" alt="..."> -->
+            <div class="carousel-item3">
+                <div id="myModal" class="modal">
+                    <!-- <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div> -->
+                </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+    <!-- <div class="keis_img">
         <div class="keis_img_container"></div>
-    </div>
+    </div> -->
     <div class="keis_content">
         <div class="keis_left">
             <h3>CLIENT:</h3>
@@ -170,26 +218,34 @@
 </section>
 
 
-<section class="price">
+<section class="price" id="price">
     <div class="price_shadow">
         <div class="price_head">
             <h2>Расчет стоимости</h2>
         </div>
-        <div class="price_content">
+        <form class="price_content">
             <h3 class="price_h_1">тип сайта</h3>
-            <select class="select" name="list1" id="list" >
-                    <option value="option1">Выберите пункт...</option>
-                    
+            <select class="select" name="list1" id="list1" >
+                    <option value="0">Не выбранно</option>
+                    <option value="1000">Сайт визитка 1000р</option>
+                    <option value="2000">Многостроничный сайт 2000р</option>
+                    <option value="8000">Более замудрённый 8000р</option>
             </select>
             <h3 class="price_h_2">дизайн</h3>
-            <select class="select" name="list2" id="list" >
-                    <option value="option1">Выберите пункт...</option>
+            <select class="select" name="list2" id="list2">
+                <option value="0">Не выбранно</option>
+                <option value="500">Сойдёт 500р</option>
+                <option value="1500">Норм 1500р</option>
+                <option value="3500">Красивый 3500р</option>
             </select>
             <h3 class="price_h_3">адаптивность</h3>
-            <select class="select" name="list3" id="list" >
-                    <option value="option1">Выберите пункт...</option>
+            <select class="select" name="list3" id="list3" >
+                <option value="0">Не выбранно</option>
+                <option value="7000">Да 7000р</option>
+                <option value="2000">Под 2 платформы 2000р</option>
+                <option value="0">Нет 0р</option>
             </select>
-        </div>
+        </form>
         <div class="price_foot">
             <div class="price_left">
                 <p>Сроки</p>
@@ -197,16 +253,42 @@
             </div>
             <div class="price_right">
                 <p>0</p>
-                <p>0</p>
+                <p class="price-result">0</p>
             </div>
         </div>
         <div class="price_input">
-            <input type="button" value="Оставить заявку">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Оставить заявку</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Оставьте ваши данные</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Ваше имя:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Номер:</label>
+                          <input class="form-control" id="message-text"></input>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                      <button type="button" class="btn btn-primary">Отправить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </div>    
 </section>
 
-<section class="static">
+<section class="static" id="static">
     <div class="static_head">
         <h2>НЕМНОГО СТАТИСТИКИ</h2>
         <br>
@@ -244,25 +326,42 @@
     </div>
 </section>
 
-    <section class="otzyvy">
-        <div class="otzyvy_content">
+    <section class="otzyvy" id="otzyvy">
+        <div class="otzyvy_head">
             <h2>Отзывы</h2>
             <img src="img/chert.png" alt="chert">
             <br>
-            <img src="img/fotka2.png" alt="foto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae facere id, hic illum accusamus quia, fugiat quaerat animi rerum sint, temporibus expedita aperiam, ratione iste porro harum maxime laboriosam eos!</p>     
-                <h3><b>Тимур,</b> Ген директор ПАО "Газпром".</h3>  
-                <div class="checkbox">
-                    <div class="checkbox_1"></div>
-                    <div class="checkbox_2"></div>
-                    <div class="checkbox_3"></div>
+        </div>
+        <div class="otzyvy_content">
+            <div class="rev_slider">
+                <div class="slider">
+                    <div class="avatar"></div>   
+                    <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor repellendus sequi, dolore eligendi ipsa doloribus laboriosam voluptas ab repellat. Fugit, quos. Possimus distinctio asperiores quis magni laborum pariatur placeat dolorum.
+                    </div>
+                    <div class="name"><b>Михаил,</b> Ген Директор ПАО "Газпром".</div>
+                </div>
+            
+
+                <div class="slider">
+                    <div class="avatar"></div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt expedita exercitationem consequuntur veritatis iusto repellendus ea ex sed delectus. Labore, provident quos! Vero quasi nam praesentium veniam consectetur. Sed.
+                    </div>
+                    <div class="name"><b>Владислав,</b> Ген Директор ПАО "Газпром".</div>
+                </div>
+            
+
+                <div class="slider">
+                    <div class="avatar"></div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit aut sed pariatur at nisi, earum officia maiores! Fugiat similique architecto laudantium quidem labore libero facilis, ab dolores saepe temporibus est!
+                    </div>
+                    <div class="name"><b>Олег,</b> Ген Директор ПАО "Газпром".</div>
                 </div>
             </div>
-        
+        </div>
     </section>
 
 
-<section class="contact">
+<section class="contact" id="contact">
     <div class="contact_head">
         <h2>МОИ КОНТАКТЫ</h2>
         <img  src="img/chert.png" alt="">
@@ -294,14 +393,19 @@
         <div class="contact_submit">
             <input  type="button" value="Отправить">
         </div>
-        <div class="contact_social">
-            <img src="img/fb.png" alt="social">
-            <img src="img/tw.png" alt="social">
-            <img src="img/mych.png" alt="social">
-            <img src="img/pussy.png" alt="social">
-            <img src="img/inst.png" alt="social">
-            <img src="img/in.png" alt="social">
-        </div>
+        <div class="square-wrapper">
+            <div class="square square-transition">
+                <div class="contact_social">
+                    <img src="img/fb.png" alt="social">
+                    <img src="img/tw.png" alt="social">
+                    <img src="img/mych.png" alt="social">
+                    <img src="img/pussy.png" alt="social">
+                    <img src="img/inst.png" alt="social">
+                    <img src="img/in.png" alt="social">
+                </div>
+            </div>
+          </div>
+        
     </div>
 
 
@@ -317,8 +421,11 @@
 <footer>
         <h5>Copyright@ 2021 Тимур Кашапов. Design by Web</h5>
 </footer>
- <script src="js/script.js"></script>
- <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
+
 
 </body> 
 </html>
